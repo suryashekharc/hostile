@@ -45,7 +45,7 @@ label splashscreen:
 
 label start:
     $ score = 0
-    $ total = 2
+    $ total = 5
     $ y = renpy.input("What is your name?", default = "Human Bean", length = 20)
     "Very well, [y]. Good luck!"
 
@@ -59,32 +59,69 @@ label start:
         "The black pillars":
             "Not really"
     "The spikes on the bench prevent people from sleeping: from the homeless to the old and infirm"
-    pause
+
+
 
     scene blue_room
     "What's wrong here?"
     menu:
-        "The handles next to the commoda":
+        "The handles next to the commode":
             "They are actually helpful!"
-            $ score += 1
         "The blue light":
             "Correct!"
             $ score += 1
     "The blue light is meant to make it difficult for drug users to locate a vein to inject themselves"
-    pause
+
+
 
     scene boulder_sf
     "What's wrong here?"
     menu:
-        "The handles next to the commoda":
-            "They are actually helpful!"
-            $ score += 1
-        "The blue light":
+        "The boulders":
             "Correct!"
             $ score += 1
-    "The blue light is meant to make it difficult for drug users to locate a vein to inject themselves"
-    pause
+        "The walls":
+            "Nope"
+    "SF residents spent $2K to get these boulders to prevent the homeless from sleeping/camping"
+
+
+
+
+    scene skate_stopper
+    "What's wrong here?"
+    menu:
+        "The leaves":
+            "Correct!"
+            $ score += 1
+        "The chair":
+            "Nope - even tho it looks uncomfy"
+    "These skate stoppers are meant to discourage sk8r boys from doing their thing"
+
+
+
+    scene water_fountain
+    "What's wrong here?"
+    menu:
+        "The fridge":
+            "Incorrect"
+        "The missing fountain":
+            "Correct"
+            $ score += 1
+    "The water fountain has been removed to force people to pay to drink water"
+
+
+
+    scene wtf_poop
+    "What's wrong here?"
+    menu:
+        "Nothing":
+            "Correct"
+        "Absolutely nothing":
+            "Absolutely correct"
+    "You're good at this game, [y]"
+
+
 
     scene end_screen
-    "Your total score is [score] / [total]"
+    "Congratulations on making it to the end, [y]. Your total score is [score] / [total]"
 return
