@@ -48,16 +48,43 @@ label start:
     $ total = 2
     $ y = renpy.input("What is your name?", default = "Human Bean", length = 20)
     "Very well, [y]. Good luck!"
+
+
     scene bench_1
     "What's wrong here?"
     menu:
         "The benches":
             "Correct!"
             $ score += 1
-        "The black pillar":
+        "The black pillars":
             "Not really"
     "The spikes on the bench prevent people from sleeping: from the homeless to the old and infirm"
     pause
+
+    scene blue_room
+    "What's wrong here?"
+    menu:
+        "The handles next to the commoda":
+            "They are actually helpful!"
+            $ score += 1
+        "The blue light":
+            "Correct!"
+            $ score += 1
+    "The blue light is meant to make it difficult for drug users to locate a vein to inject themselves"
+    pause
+
+    scene boulder_sf
+    "What's wrong here?"
+    menu:
+        "The handles next to the commoda":
+            "They are actually helpful!"
+            $ score += 1
+        "The blue light":
+            "Correct!"
+            $ score += 1
+    "The blue light is meant to make it difficult for drug users to locate a vein to inject themselves"
+    pause
+
     scene end_screen
     "Your total score is [score] / [total]"
 return
