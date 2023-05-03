@@ -1,41 +1,8 @@
-﻿# # The script of the game goes in this file.
-
-# # Declare characters used by this game. The color argument colorizes the
-# # name of the character.
-
-# define e = Character("Eileen")
-
-
-# # The game starts here.
-
-# label start:
-
-#     # Show a background. This uses a placeholder by default, but you can
-#     # add a file (named either "bg room.png" or "bg room.jpg") to the
-#     # images directory to show it.
-
-#     scene bg room
-
-#     # This shows a character sprite. A placeholder is used, but you can
-#     # replace it by adding a file named "eileen happy.png" to the images
-#     # directory.
-
-#     show eileen happy
-
-#     # These display lines of dialogue.
-
-#     e "You've created a new Ren'Py game."
-
-#     e "Once you add a story, pictures, and music, you can release it to the world!"
-
-#     # This ends the game.
-
-#     return
-label splashscreen:
-    scene black
+﻿label splashscreen:
+    scene two_cats
     with Pause(1)
 
-    show text "Are you ready to identify some hostile design?" with dissolve
+    show text "{outlinecolor=#00ff00}{color=#0000ffff}Are you ready to identify some hostile design?{/color}{/outlinecolor}" with dissolve
     with Pause(2)
 
     hide text with dissolve
@@ -45,13 +12,13 @@ label splashscreen:
 
 label start:
     $ score = 0
-    $ total = 5
+    $ total = 8
     $ y = renpy.input("What is your name?", default = "Human Bean", length = 20)
-    "Very well, [y]. Good luck!"
+    "Very well, [y]. Try to identify the hostile design in the game without looking at the options first. Good luck!"
 
 
     scene bench_1
-    "What's wrong here?"
+    "What's the hostile design here?"
     menu:
         "The benches":
             "Correct!"
@@ -63,7 +30,7 @@ label start:
 
 
     scene blue_room
-    "What's wrong here?"
+    "What hostile design do you notice in this nightclub washroom?"
     menu:
         "The handles next to the commode":
             "They are actually helpful!"
@@ -75,7 +42,7 @@ label start:
 
 
     scene boulder_sf
-    "What's wrong here?"
+    "What is the anti-homeless hostile design here?"
     menu:
         "The boulders":
             "Correct!"
@@ -85,10 +52,8 @@ label start:
     "SF residents spent $2K to get these boulders to prevent the homeless from sleeping/camping"
 
 
-
-
     scene skate_stopper
-    "What's wrong here?"
+    "What hostile design is in play here?"
     menu:
         "The leaves":
             "Correct!"
@@ -100,7 +65,7 @@ label start:
 
 
     scene water_fountain
-    "What's wrong here?"
+    "This one is hard. Can you guess what went on here?"
     menu:
         "The fridge":
             "Incorrect"
@@ -109,6 +74,38 @@ label start:
             $ score += 1
     "The water fountain has been removed to force people to pay to drink water"
 
+
+    scene awning
+    "What apparent design flaw is hiding in this picture?"
+    menu:
+        "The roof awning":
+            "Correct"
+            $ score += 1
+        "The cycle stands":
+            "Not really"
+    "The awning has a gap to let rainwater drip to the floor preventing the homeless from seeking shelter there during rainy weather"
+
+
+    scene grate
+    "What is the grate design trying to prevent?"
+    menu:
+        "Loitering":
+            "Yep"
+            $ score += 1
+        "Littering":
+            "Not really"
+    "Homeless people often rest on or gather around grates for the warmth they get from them in cold weather"
+
+
+    scene plant
+    "What is the hostile design element here? It's a toughie."
+    menu:
+        "The potted plants":
+            "Correct"
+            $ score += 1
+        "The tile design":
+            "Not exactly"
+    "The plant walls guide the pedestrians to stick to the sidewalk, making it hard for the homeless to sleep there"
 
 
     scene wtf_poop
@@ -123,5 +120,7 @@ label start:
 
 
     scene end_screen
-    "Congratulations on making it to the end, [y]. Your total score is [score] / [total]"
+    "Congratulations on making it to the end, [y]. Your total score is [score] / [total]. "
+    "The problem with hostile design is that it tries to solve the problem by not acknowledging it in the first place. Homelessness is not solved by pushing the homeless out of sight."
+    "Thank you for playing this game - hope you learnt a thing or three. I sure did!"
 return
